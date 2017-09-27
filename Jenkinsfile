@@ -1,11 +1,16 @@
-pipeline {
+peline {
  agent any
  stages {
  stage('build') {
  steps {
- sh 'ant build.xml'
+ sh 'javac -d . src/*.java'
  sh 'echo Main-Class: Rectangulator > MANIFEST.MF'
- sh 'jar -cvmf MANIFEST.MF TestOne.jar *.class'
+ sh 'jar -cvmf MANIFEST.MF rectangle.jar *.class'
+ }
+ }
+ stage('run') {
+ steps {
+ sh 'java -jar rectangle.jar 7 9'
  }
  }
  }
