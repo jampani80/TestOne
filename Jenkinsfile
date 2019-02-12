@@ -3,6 +3,7 @@ pipeline {
  stages {
  
   stage('SetUp') {
+   steps {
     env.JAVA_HOME="${tool 'jdk_8u181'}"
     env.ANT_HOME="${tool 'ant_1_10_5'}"
     env.PATH = "${env.JAVA_HOME}/bin:${env.ANT_HOME}/bin:${env.PATH}"
@@ -10,6 +11,7 @@ pipeline {
     withAnt(installation: 'ant_1_10_5', jdk: 'jdk_8u181') {
     //  echo "Test ant"
       sh "ant -d -version"
+    }
     }
   }
   
