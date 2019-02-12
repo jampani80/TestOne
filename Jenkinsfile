@@ -5,10 +5,10 @@ pipeline {
   stage('SetUp') {
    steps {
     
-    env.ANT_HOME="${tool 'ant_1_10_5'}"
+    env.ANT_HOME="${tool 'ant}"
     env.PATH = "${env.ANT_HOME}/bin:${env.PATH}"
     sh "java -version"
-    withAnt(installation: 'ant_1_10_5') {
+    withAnt(installation: 'ant') {
     //  echo "Test ant"
       sh "ant -d -version"
     }
