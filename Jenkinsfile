@@ -1,12 +1,12 @@
 pipeline {
  agent any
  stages {
- stage('build') {
+ stage('Build') {
  steps {
- sh 'ant build.xml'
+   sh "'ant build.xml'"
  }
  }
- stage('run') {
+ stage('Run') {
  steps {
  sh 'echo srini'
  }
