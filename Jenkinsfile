@@ -8,7 +8,7 @@ pipeline {
  steps {
   withAnt(installation: 'ant') {
    
-   sh 'ant TestOne/build.xml'
+   sh 'ant build.xml'
   }
   }
  }
